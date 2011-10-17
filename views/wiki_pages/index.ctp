@@ -48,7 +48,7 @@ foreach ($wikiPages as $wikiPage):
 
 <?php 
 // set the contextual menu items
-$menu->setValue(array(
+$this->Menu->setValue(array(
 	array(
 		'heading' => 'Wikis',
 		'items' => array(
