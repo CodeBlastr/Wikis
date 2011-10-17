@@ -2,16 +2,16 @@
 <h2><?php __('Wiki Pages');?></h2>
 <p>
 <?php
-echo $paginator->counter(array(
+echo $this->Paginator->counter(array(
 'format' => __('Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%', true)
 ));
 ?></p>
 <table cellpadding="0" cellspacing="0">
 <tr>
-	<th><?php echo $paginator->sort('Wiki.id');?></th>
-	<th><?php echo $paginator->sort('WikiPage.id');?></th>
-	<th><?php echo $paginator->sort('WikiPage.title');?></th>
-	<th><?php echo $paginator->sort('WikiContent.text');?></th>
+	<th><?php echo $this->Paginator->sort('Wiki.id');?></th>
+	<th><?php echo $this->Paginator->sort('WikiPage.id');?></th>
+	<th><?php echo $this->Paginator->sort('WikiPage.title');?></th>
+	<th><?php echo $this->Paginator->sort('WikiContent.text');?></th>
 	<th class="actions"><?php __('Actions');?></th>
 </tr>
 <?php
