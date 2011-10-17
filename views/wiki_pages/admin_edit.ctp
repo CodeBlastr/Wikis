@@ -4,8 +4,8 @@
  		<legend><?php __('Edit Wiki Page');?></legend>
 	<?php
 		echo $this->Form->input('WikiPage.id'); 
-		if (isset($this->params['named']['wiki'])) {
-			echo $this->Form->input('WikiPage.wiki_id', array('type' => 'hidden', 'value' => $this->params['named']['wiki'])); 
+		if (isset($this->request->params['named']['wiki'])) {
+			echo $this->Form->input('WikiPage.wiki_id', array('type' => 'hidden', 'value' => $this->request->params['named']['wiki'])); 
 		} else {
 			echo $this->Form->input('WikiPage.wiki_id', array('type' => 'hidden'));
 		}
