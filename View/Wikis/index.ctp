@@ -1,11 +1,5 @@
 <div class="wikis index">
 <h2><?php echo __('Wikis');?></h2>
-<p>
-<?php
-echo $this->Paginator->counter(array(
-'format' => __('Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%', true)
-));
-?></p>
 <table cellpadding="0" cellspacing="0">
 <tr>
 	<th><?php echo $this->Paginator->sort('WikiStartPage.title');?></th>
@@ -31,7 +25,7 @@ foreach ($wikis as $wiki):
 <?php endforeach; ?>
 </table>
 </div>
-<?php echo $this->element('paging'); ?>
+<?php echo $this->Element('paging'); ?>
 
 
 <?php 
@@ -40,7 +34,7 @@ echo $this->Element('context_menu', array('menus' => array(
 	array(
 		'heading' => 'Wikis',
 		'items' => array(
-			$this->Html->link(__('Add Wiki', true), array('controller' => 'wiki_contents', 'action' => 'edit', 'admin' => 1))),
+			$this->Html->link(__('Add Wiki', true), array('controller' => 'wiki_pages', 'action' => 'edit', 'admin' => 1))),
 		),
 	)));
 ?>
