@@ -1,5 +1,5 @@
 <div class="wikis index">
-<h2><?php __('Wiki Pages');?></h2>
+<h2><?php echo __('Wiki Pages');?></h2>
 <p>
 <?php
 echo $this->Paginator->counter(array(
@@ -12,7 +12,7 @@ echo $this->Paginator->counter(array(
 	<th><?php echo $this->Paginator->sort('WikiPage.id');?></th>
 	<th><?php echo $this->Paginator->sort('WikiPage.title');?></th>
 	<th><?php echo $this->Paginator->sort('WikiContent.text');?></th>
-	<th class="actions"><?php __('Actions');?></th>
+	<th class="actions"><?php echo __('Actions');?></th>
 </tr>
 <?php
 $i = 0;

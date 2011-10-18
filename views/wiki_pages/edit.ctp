@@ -1,7 +1,7 @@
 <div class="wikiContents form">
 <?php echo $this->Form->create('WikiPage', array('enctype'=>'multipart/form-data'));?>
 	<fieldset>
- 		<legend><?php __('Edit Wiki Page');?></legend>
+ 		<legend><?php echo __('Edit Wiki Page');?></legend>
 	<?php
 		echo $this->Form->input('WikiPage.id'); 
 		echo $this->Form->input('WikiPage.wiki_id', array('type' => 'hidden')); 
