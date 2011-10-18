@@ -33,7 +33,7 @@ foreach ($wikiPages as $wikiPage):
 			<?php echo $this->Html->link(str_replace('_', ' ', $wikiPage['WikiPage']['title']), array('controller' => 'wiki_pages', 'action' => 'view', 'wiki_id' => $wikiPage['Wiki']['id'], $wikiPage['WikiPage']['title'])); ?>
 		</td>
     	<td>
-        	<?php echo $text->truncate(strip_tags($wikiPage['WikiContent']['text']), 30, array('ending' => '...', 'exact' => false, 'htmll' => true)); ?>
+        	<?php echo $this->Text->truncate(strip_tags($wikiPage['WikiContent']['text']), 30, array('ending' => '...', 'exact' => false, 'htmll' => true)); ?>
         </td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Add Page', true), array('controller' => 'wiki_pages', 'action' => 'edit', 'wiki_id' => $wikiPage['Wiki']['id'])); ?>
