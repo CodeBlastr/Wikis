@@ -32,20 +32,20 @@ class WikisController extends WikisAppController {
 	}
 
 	function admin_edit($id = null) {
-		if (!$id && empty($this->data)) {
+		if (!$id && empty($this->request->data)) {
 			$this->Session->setFlash(__('Invalid Wiki', true));
 			$this->redirect(array('action'=>'index'));
 		}
-		if (!empty($this->data)) {
-			if ($this->Wiki->save($this->data)) {
+		if (!empty($this->request->data)) {
+			if ($this->Wiki->save($this->request->data)) {
 				$this->Session->setFlash(__('The Wiki has been saved', true));
 				$this->redirect(array('action'=>'index'));
 			} else {
 				$this->Session->setFlash(__('The Wiki could not be saved. Please, try again.', true));
 			}
 		}
-		if (empty($this->data)) {
-			$this->data = $this->Wiki->read(null, $id);
+		if (empty($this->request->data)) {
+			$this->request->data = $this->Wiki->read(null, $id);
 		}
 		$projects = $this->Wiki->Project->find('list');
 		$wikiStartPages = $this->Wiki->WikiStartPage->find('list');

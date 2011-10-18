@@ -9,7 +9,7 @@
 		} else {
 			echo $this->Form->input('WikiPage.wiki_id', array('type' => 'hidden'));
 		}
-		if (isset($this->data['WikiPage.title'])) {
+		if (isset($this->request->data['WikiPage.title'])) {
 			echo $this->Form->input('WikiPage.title');
 		} else if (isset($this->params['pass'][0])) {
 			echo $this->Form->input('WikiPage.title', array('value' => end($this->params['pass']))); 

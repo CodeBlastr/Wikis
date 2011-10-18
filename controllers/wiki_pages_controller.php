@@ -38,8 +38,8 @@ class WikiPagesController extends WikisAppController {
 		
 	
 	function add($wiki = null, $alias = null) {
-		if (!empty($this->data)) {
-			if ($this->WikiPage->add($this->data)) {
+		if (!empty($this->request->data)) {
+			if ($this->WikiPage->add($this->request->data)) {
 				$this->Session->setFlash(__('Successful Save', true));
 				$this->redirect(array('action' => 'view', $this->WikiPage->id));
 			} else {
@@ -51,8 +51,8 @@ class WikiPagesController extends WikisAppController {
 
 
 	function edit($wiki = null, $alias = null) {
-		if (!empty($this->data)) {
-			if ($this->WikiPage->add($this->data)) {
+		if (!empty($this->request->data)) {
+			if ($this->WikiPage->add($this->request->data)) {
 				$this->Session->setFlash(__('Successful Save', true));
 				$this->redirect(array('action' => 'view', $this->WikiPage->id));
 			} else {
@@ -93,8 +93,8 @@ class WikiPagesController extends WikisAppController {
 		
 	
 	function admin_add($wiki = null, $alias = null) {
-		if (!empty($this->data)) {
-			if ($this->WikiPage->add($this->data)) {
+		if (!empty($this->request->data)) {
+			if ($this->WikiPage->add($this->request->data)) {
 				$this->Session->setFlash(__('Successful Save', true));
 				$this->redirect(array('action' => 'view', $this->WikiPage->id));
 			} else {
@@ -107,8 +107,8 @@ class WikiPagesController extends WikisAppController {
 	
 
 	function admin_edit($wiki = null, $alias = null) {
-		if (!empty($this->data)) {
-			if ($this->WikiPage->add($this->data)) {
+		if (!empty($this->request->data)) {
+			if ($this->WikiPage->add($this->request->data)) {
 				$this->Session->setFlash(__('Successful Save', true));
 				$this->redirect(array('action' => 'view', $this->WikiPage->id));
 			} else {
@@ -230,7 +230,7 @@ class WikiPagesController extends WikisAppController {
 				$this->Session->setFlash(__('This page already exists', true));
 				$this->redirect(array('action' => 'edit', $wiki, $alias));
 			} else {
-				$this->data = $aliasPage;
+				$this->request->data = $aliasPage;
 			}
 		} else if (!empty($wiki)) {
 			# make sure that the page doesn't already exist
@@ -244,9 +244,9 @@ class WikiPagesController extends WikisAppController {
 		} else {
 			# vars already set, don't need to do anything
 		}
-		$this->data['WikiPage']['wiki_id'] = $wikiId;
-		$this->data['WikiPage']['wiki_start_page'] = $wiki;
-		$this->data['WikiPage']['title'] = $alias;
+		$this->request->data['WikiPage']['wiki_id'] = $wikiId;
+		$this->request->data['WikiPage']['wiki_start_page'] = $wiki;
+		$this->request->data['WikiPage']['title'] = $alias;
 	}
 
 }
