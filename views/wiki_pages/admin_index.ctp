@@ -48,11 +48,11 @@ foreach ($wikiPages as $wikiPage):
 
 <?php 
 // set the contextual menu items
-$this->Menu->setValue(array(
+echo $this->Element('context_menu', array('menus' => array(
 	array(
 		'heading' => 'Wikis',
 		'items' => array(
 			$this->Html->link(__('Add Wiki', true), array('controller' => 'wiki_pages', 'action' => 'edit', 'admin' => 1))),
 		),
-	));
+	)));
 ?>
