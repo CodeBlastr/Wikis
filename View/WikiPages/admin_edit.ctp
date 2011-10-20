@@ -11,8 +11,8 @@
 		}
 		if (isset($this->request->data['WikiPage.title'])) {
 			echo $this->Form->input('WikiPage.title');
-		} else if (isset($this->params['pass'][0])) {
-			echo $this->Form->input('WikiPage.title', array('value' => end($this->params['pass']))); 
+		} else if (isset($this->request->params['pass'][0])) {
+			echo $this->Form->input('WikiPage.title', array('value' => end($this->request->params['pass']))); 
 		} else {
 			echo $this->Form->input('WikiPage.title');			
 		}
