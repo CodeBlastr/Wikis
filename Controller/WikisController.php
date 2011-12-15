@@ -1,7 +1,8 @@
 <?php
 class WikisController extends WikisAppController {
 
-	var $name = 'Wikis';
+	public $name = 'Wikis';
+	public $uses = 'Wikis.Wiki';
 
 	function index() {
 		$this->Wiki->recursive = 0;

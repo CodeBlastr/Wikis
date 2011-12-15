@@ -1,7 +1,8 @@
 <?php
 class WikiPagesController extends WikisAppController {
 
-	var $name = 'WikiPages';
+	public $name = 'WikiPages';
+	public $uses = 'Wikis.WikiPage';
 
 	function index() {
 		$this->paginate = array(
